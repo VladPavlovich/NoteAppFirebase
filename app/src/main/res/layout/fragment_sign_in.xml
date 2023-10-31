@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SignInFragment">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.project7.NoteViewModel"/>
+    </data>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Sign In"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Email"
+            android:text="@={viewModel.user.email}"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Password"
+            android:text="@={viewModel.user.password}"
+            android:inputType="textPassword"/>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="@{() -> viewModel.signIn()}"
+            android:text="Sign In"/>
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="No Account Sign Up"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</layout>
